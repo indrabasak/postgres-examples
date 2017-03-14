@@ -37,7 +37,7 @@ public class SwaggerConfiguration {
                         "com.basaki.example.postgres.spring.jsonb.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo("Book API",
+                .apiInfo(apiInfo("Book API with Postgres JSONB",
                         "Book Service API Powered By PostgreSQL"));
     }
 
