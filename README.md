@@ -9,6 +9,7 @@ This is a [**Spring Cloud**](http://projects.spring.io/spring-cloud/) based micr
 The project consist of multiple modules and can be classified into following categories:
 
 **Services**
+
 1. `postgres-spring`
   * `postgres-spring-model` - contains all the models used in the examples
   * `postgres-spring-service` - example Spring cloud project which uses Spring Boot and Spring Data to connect to PostgreSQL databse. 
