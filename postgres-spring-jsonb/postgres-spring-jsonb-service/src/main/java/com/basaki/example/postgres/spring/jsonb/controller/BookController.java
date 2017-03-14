@@ -6,6 +6,7 @@ import com.basaki.example.postgres.spring.jsonb.model.Genre;
 import com.basaki.example.postgres.spring.jsonb.service.BookService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import java.util.List;
@@ -42,6 +43,7 @@ public class BookController {
 
     public static final String BOOK_BY_ID_URL = BOOK_URL + "/{id}";
 
+    public static final String PUBLISHER_URL = BOOK_URL + "/publishers";
 
     @Autowired
     private BookService service;
@@ -98,5 +100,18 @@ public class BookController {
     @ResponseBody
     public void deleteAll() {
         service.deleteAll();
+    }
+
+    @ApiOperation(
+            value = "Retrieves a list of distinct publisher based on partial publisher name search.",
+            notes = "Requires a partial publisher name",
+            response = String.class, responseContainer = "List")
+    @RequestMapping(method = RequestMethod.GET, value = PUBLISHER_URL,
+            produces = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseBody
+    public List<String> getPublisher(
+            @ApiParam(value = "partial publisher name", required = true)
+            @RequestParam(value = "q") String publisher) {
+        return service.getPublisher(publisher);
     }
 }

@@ -104,6 +104,10 @@ public class BookService {
         repo.deleteAll();
     }
 
+    public List<String> getPublisher(String publisher) {
+        return repo.findDistinctPublisher(publisher);
+    }
+
     private List<Book> map(List<BookEntity> entities) {
         if (entities == null || entities.isEmpty()) {
             throw new DataNotFoundException(
