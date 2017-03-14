@@ -1,12 +1,14 @@
-PostgreSQL Spring Service Example
-=========================================
+PostgreSQL Spring Service Example with JSONN Type Column and JPA Query By Example
+=================================================================================
 This is a [**Spring Cloud**](http://projects.spring.io/spring-cloud/) based microservices example backed by
 [**PostgreSQL**](https://www.postgresql.org/) database. This examples shows the following:
 * Use `spring.datasource` properties and Spring Data auto configuration.
 * How to use JPA's `CrudRepository`
 * How to insert `UUID` field in Postgres database and generate `UUID `index.
 * How to convert Java `Enum` to Postgres `Enum` type.
-* How to use `Dozer` Java Bean mapper.
+* How to convert Java `Object` to Postgres `JSONB` type
+* How to use `Dozer` Java Bean mapper
+* How to use [`JPA Query by Example`](https://github.com/spring-projects/spring-data-commons/blob/master/src/main/asciidoc/query-by-example.adoc)
 
 ### PostgreSQL Assumptions
 * You have a PostgreSQL database server running on your `localhost` and in port `5432`.

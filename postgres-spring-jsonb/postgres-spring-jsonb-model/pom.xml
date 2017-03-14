@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <artifactId>postgres-spring</artifactId>
+        <artifactId>postgres-spring-jsonb</artifactId>
         <groupId>com.basaki.example</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.basaki.example</groupId>
-    <artifactId>postgres-spring-model</artifactId>
+    <artifactId>postgres-spring-jsonb-model</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
-    <name>Postgres Spring Model</name>
+    <name>Postgres Spring JSOB Model</name>
 
     <build>
         <plugins>
@@ -24,5 +24,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

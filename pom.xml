@@ -9,7 +9,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring.boot.version>1.4.1.RELEASE</spring.boot.version>
+		<spring.boot.version>1.4.5.RELEASE</spring.boot.version>
 		<spring.cloud.version>Camden.RELEASE</spring.cloud.version>
 		<lombok.version>1.16.8</lombok.version>
 		<swagger.version>2.5.0</swagger.version>
@@ -134,5 +134,6 @@
 
 	<modules>
 		<module>postgres-spring</module>
+		<module>postgres-spring-jsonb</module>
 	</modules>
 </project>
