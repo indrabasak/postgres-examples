@@ -1,6 +1,6 @@
 package com.basaki.example.postgres.spring.service;
 
-import com.basaki.example.postgres.spring.data.entity.BookRecord;
+import com.basaki.example.postgres.spring.data.entity.BookEntity;
 import com.basaki.example.postgres.spring.data.repository.BookRepository;
 import com.basaki.example.postgres.spring.error.DataNotFoundException;
 import com.basaki.example.postgres.spring.error.InvalidSearchException;
@@ -38,22 +38,21 @@ public class BookService {
         this.mapper = mapper;
     }
 
-
     public Book create(BookRequest request) {
-        Assert.notNull(request.getTitle());
-        Assert.notNull(request.getAuthor());
-        Assert.notNull(request.getGenre());
+        Assert.notNull(request.getTitle(), "Title can't be null!");
+        Assert.notNull(request.getAuthor(), "Author can't be null!");
+        Assert.notNull(request.getGenre(), "Genre can't be null!");
 
-        BookRecord record = mapper.map(request, BookRecord.class);
-        record = repo.save(record);
-        Book book = mapper.map(record, Book.class);
+        BookEntity entity = mapper.map(request, BookEntity.class);
+        entity = repo.save(entity);
+        Book book = mapper.map(entity, Book.class);
 
         return book;
     }
 
     public Book getById(UUID id) {
-        BookRecord record = repo.findOne(id);
-        Book book = mapper.map(record, Book.class);
+        BookEntity entity = repo.findOne(id);
+        Book book = mapper.map(entity, Book.class);
 
         return book;
     }
@@ -87,13 +86,13 @@ public class BookService {
         repo.deleteAll();
     }
 
-    private List<Book> map(List<BookRecord> records) {
-        if (records == null || records.isEmpty()) {
+    private List<Book> map(List<BookEntity> entities) {
+        if (entities == null || entities.isEmpty()) {
             throw new DataNotFoundException(
                     "No books found with the search criteria!");
         }
 
-        return records.stream().map(
+        return entities.stream().map(
                 r -> mapper.map(r, Book.class)).collect(
                 Collectors.toList());
     }

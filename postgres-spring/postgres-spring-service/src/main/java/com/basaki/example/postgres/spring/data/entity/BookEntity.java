@@ -16,7 +16,7 @@ import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
 
 /**
- * {@code BookRecord} represents a row in the <code>Books</code> database table.
+ * {@code BookEntity} represents a row in the <code>Books</code> database table.
  * <p/>
  *
  * @author Indra Basak
@@ -27,7 +27,7 @@ import org.hibernate.annotations.Type;
 @AllArgsConstructor
 @Entity
 @Table(name = "books", schema = "example")
-public class BookRecord implements Serializable {
+public class BookEntity implements Serializable {
 
     @Id
     @Column(name = "id")

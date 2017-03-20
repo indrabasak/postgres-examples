@@ -49,6 +49,7 @@ public class BookController {
     @ApiOperation(
             value = "Creates an book.",
             notes = "Requires book title and name of the author.",
+            tags = {"1"},
             response = Book.class)
     @ApiResponses({
             @ApiResponse(code = 201, response = Override.class,

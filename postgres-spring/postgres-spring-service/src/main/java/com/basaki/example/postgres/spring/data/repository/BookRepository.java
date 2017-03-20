@@ -1,6 +1,6 @@
 package com.basaki.example.postgres.spring.data.repository;
 
-import com.basaki.example.postgres.spring.data.entity.BookRecord;
+import com.basaki.example.postgres.spring.data.entity.BookEntity;
 import com.basaki.example.postgres.spring.model.Genre;
 import java.util.List;
 import java.util.UUID;
@@ -14,23 +14,23 @@ import org.springframework.data.repository.CrudRepository;
  * @author Indra Basak
  * @since 3/8/17
  */
-public interface BookRepository extends CrudRepository<BookRecord, UUID> {
+public interface BookRepository extends CrudRepository<BookEntity, UUID> {
 
-    List<BookRecord> findByTitleIgnoreCase(String title);
+    List<BookEntity> findByTitleIgnoreCase(String title);
 
-    List<BookRecord> findByTitleIgnoreCaseAndAuthorIgnoreCase(String title,
+    List<BookEntity> findByTitleIgnoreCaseAndAuthorIgnoreCase(String title,
             String author);
 
-    List<BookRecord> findByTitleIgnoreCaseAndAuthorIgnoreCaseAndGenre(
+    List<BookEntity> findByTitleIgnoreCaseAndAuthorIgnoreCaseAndGenre(
             String title,
             String author,
             Genre genre);
 
-    List<BookRecord> findByTitleIgnoreCaseAndGenre(String title, Genre genre);
+    List<BookEntity> findByTitleIgnoreCaseAndGenre(String title, Genre genre);
 
-    List<BookRecord> findByAuthorIgnoreCase(String author);
+    List<BookEntity> findByAuthorIgnoreCase(String author);
 
-    List<BookRecord> findByAuthorIgnoreCaseAndGenre(String author, Genre genre);
+    List<BookEntity> findByAuthorIgnoreCaseAndGenre(String author, Genre genre);
 
-    List<BookRecord> findByGenre(Genre genre);
+    List<BookEntity> findByGenre(Genre genre);
 }
